@@ -1,0 +1,34 @@
+# Package classes
+#
+# Build system uses the first argument as the package manager when creating
+# an image or SDK; however, packages will be created using any additional
+# packaging classes you specify
+#
+# Reference:
+# http://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html#var-PACKAGE_CLASSES
+#
+# You can choose from variety of combinations!
+
+#PACKAGE_CLASSES = "package_deb"
+
+#PACKAGE_CLASSES = "package_ipk"
+
+#PACKAGE_CLASSES = "package_rpm"
+
+#PACKAGE_CLASSES = "package_deb package_ipk"
+
+#PACKAGE_CLASSES = "package_deb package_rpm"
+
+#PACKAGE_CLASSES = "package_ipk package_deb"
+
+#PACKAGE_CLASSES = "package_ipk package_rpm"
+
+#PACKAGE_CLASSES = "package_rpm package_deb"
+
+#PACKAGE_CLASSES = "package_deb package_ipk"
+
+#PACKAGE_CLASSES = "package_deb package_ipk package_rpm"
+
+#PACKAGE_CLASSES = "package_ipk package_deb package_rpm"
+
+#PACKAGE_CLASSES = "package_rpm package_deb package_ipk"

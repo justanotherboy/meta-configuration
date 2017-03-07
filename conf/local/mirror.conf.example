@@ -1,0 +1,25 @@
+# Configures the build system to search other mirror locations
+# for prebuilt cache data objects before building out the data
+#
+# Reference:
+# http://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html#var-SSTATE_MIRRORS
+#SSTATE_MIRRORS = "\
+#    file://.* http://example.com/path/tot/sstates/PATH"
+SSTATE_MIRRORS = "\
+    file://.* http://example.com/sstates/PATH"
+
+
+# Specifies additional paths from which the build system gets source code.
+#
+# Reference:
+# http://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html#var-PREMIRRORS
+#PREMIRRORS_prepend = "\
+#    git://.*/.* http://example.com/data/sources/ \n \
+#    ftp://.*/.* http://example.com/data/sources/ \n \
+#    http://.*/.* http://example.com/data/sources/ \n \
+#    https://.*/.* http://example.com/data/sources/ \n"
+PREMIRRORS_prepend = "\
+    git://.*/.* http://example.com/source/ \n \
+    ftp://.*/.* http://example.com/source/ \n \
+    http://.*/.* http://example.com/source/ \n \
+    https://.*/.* http://example.com/source/ \n"

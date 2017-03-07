@@ -1,0 +1,14 @@
+# Download directory used by the build process to store downloads.
+#
+# Reference:
+# http://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html#var-DL_DIR
+#DL_DIR = "/path/to/download/directory"
+DL_DIR = "${HOME}/download"
+
+
+# Directory for the shared state cache.
+#
+# Reference:
+# http://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html#var-SSTATE_DIR
+#SSTATE_DIR = "/path/to/sstate/cache/directory"
+SSTATE_DIR = "${HOME}/sstate"

@@ -1,0 +1,33 @@
+# If you are using a single socket system do not override the next
+# variables, if you have a large system is not recommended to use
+# more than 20 threads.
+
+# Maximum number of tasks BitBake should run in parallel at any one time.
+#
+# Reference:
+# http://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html#var-BB_NUMBER_THREADS
+#BB_NUMBER_THREADS = "20"
+
+# Sets the number of threads BitBake uses when parsing.
+#
+# Reference:
+# http://www.yoctoproject.org/docs/2.2/bitbake-user-manual/bitbake-user-manual.html#var-BB_NUMBER_PARSE_THREADS
+#BB_NUMBER_THREADS = "20"
+
+# Extra options passed to the make command during do_compile
+#
+# Reference:
+# http://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html#var-PARALLEL_MAKE
+#PARALLEL_MAKE = "-j 20"
+
+# Extra options passed to the make command during do_install
+#
+# Reference:
+# http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#var-PARALLEL_MAKEINST
+#PARALLEL_MAKEINST = "-j 20"
+
+# Enable KVM with testimage
+#
+# Reference:
+# http://cgit.openembedded.org/openembedded-core/tree/meta/classes/testimage.bbclass#n212
+QEMU_USE_KVM = "True"
