@@ -1,0 +1,98 @@
+This README file contains information on the contents of the
+meta-configuration layer.
+
+Please see the corresponding sections below for details.
+
+
+Dependencies
+============
+
+This layer depends on:
+
+  URI: git://git.openembedded.org/bitbake
+  branch: master
+
+  URI: git://git.openembedded.org/openembedded-core
+  layers: meta
+  branch: master
+
+
+Patches
+=======
+
+Please submit any patches against the meta-configuration layer to the
+xxxx mailing list (xxxx@zzzz.org) and cc: the maintainer:
+
+Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+
+
+Table of Contents
+=================
+
+   I. WARNING
+  II. Motivation
+ III. How is structured
+  IV. How to use it
+  II. Adding the meta-configuration layer to your build
+
+
+I. WARNING
+==========
+
+This layer is intended for developers that heavily make configuration
+changes for testing purposes. DO NOT use for stable projects.
+
+
+II. Motivation
+==============
+
+Open Embedded is a very big project, and remembering all configuration changes
+it is difficult to achive. If you keep a single build directory all
+configuration changes goes to a single local.conf that gets unmaintainable; if
+you use a separate build directory you would need to modify local.conf with
+every new directory.
+
+If you are heavily involved in generic layer development you'll need to test
+your changes with a wide range of configurations, and this layer could help
+to make your life easier.
+
+
+III. How is structured
+======================
+
+conf/site.conf:
+  Main configuration file. This is where you can easily enable or disable
+  configuration. By default includes some files in the local directory that
+  mostly are for system specific options, such as cache directories and
+  mirrors. It also contains all the available configuration changes that can be
+  enable just uncommenting the line, by default these changes are disabled.
+
+conf/local:
+  This directory is used for local configuration files that differ from host to
+  host; perhaps they might be merged in a single file, but is separated for easy
+  sharing. This directory have some example files, you just need to copy
+  (without .example) and modify them to suite your needs.
+
+conf/core:
+  This directory is used for configuration changes used in openembbedded-core
+  layer. Changes are generice so, everyone can use them. This directory include
+  subdirectories to improve maintainability.
+
+conf/<layer>:
+  Additional configuration for other layers. It is not implemented yet, but if
+  you do, please keep the same structure as conf/core.
+
+
+IV. How to use it
+=================
+
+1. Clone this layer.
+2. Copy example configuration files as .conf files:
+
+  for i in local/*.example; do
+    cp -a $i ${i%%.example}
+  done
+
+3. Customize .conf files in local directory to suite your needs.
+4. Add meta-configuration to your BBLAYERS.
+5. Enable/disable configuration using conf/site.conf file.
