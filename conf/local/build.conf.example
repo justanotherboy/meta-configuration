@@ -12,7 +12,7 @@
 #
 # Reference:
 # http://www.yoctoproject.org/docs/2.2/bitbake-user-manual/bitbake-user-manual.html#var-BB_NUMBER_PARSE_THREADS
-#BB_NUMBER_THREADS = "20"
+#BB_NUMBER_PARSE_THREADS = "20"
 
 # Extra options passed to the make command during do_compile
 #
